@@ -45,7 +45,14 @@
                 <Setter Property="TextColor" Value="#FFFFFF"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Start"/>
-                <Setter Property="FontSize" Value="64"/>
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Andoird, iOS" Value="24"/>
+                            <On Platform="UWP" Value="64"/>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
             </Style>
 
             <Style x:Key="TopInfo" TargetType="Label">
